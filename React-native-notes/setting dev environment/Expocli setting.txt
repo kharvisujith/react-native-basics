@@ -1,0 +1,59 @@
+1.npm i -g expo-cli  
+2.expo client app on phone install
+
+
+3.install vs code extensions
+	1.react native tools
+	2.React-Native/React/Redux snippets for es6/es7
+	3.prettier --> setting enable format on save
+	4.material icon theme
+
+
+4.Using expo to create app
+-------------------------------
+	1.expo init HelloApp 
+		*.This will give error and open powershell as administrator and run this : Set-ExecutionPolicy RemoteSigned	
+		*.Select a  workflow --> managed workfolow --> blank
+
+
+
+5.for usig expo lienr gradient --> npx expo install expo-linear-gradient -- --force
+
+6.we can provide mutliple style using array style={[obj1, obj2]} this will take both, priority is first one
+
+7.ading icons -->   nothing to install everythingis preinstalled with expo  --> https://icons.expo.fyi/
+		import Ionicons from '@expo/vector-icons/Ionicons'; 
+
+ 		const addIcon = <Ionicons name="remove" size={30} color={colors.accent500} />
+    		const removeIcon = <Ionicons name="add" size={30} color={colors.accent500} />
+		<Ionicons name="md-checkmark-circle" size={32} color="green" />
+
+8.adding fonts -->
+
+	1.npx expo install expo-font -- --force
+
+	make use of usefonts hook
+
+download the ttf files and place in assets-fonts folder
+import { useFonts } from 'expo-font';
+const [fontsLoaded] = useFonts({
+        'openSans': require('../../assets/fonts/OpenSans-Regular.ttf'),
+        'openSans-bold': require('../../assets/fonts/OpenSans-Bold.ttf')
+      });
+
+in stylesheet 
+add 
+fontFamil:'openSans'
+
+
+9.expo-app-loading -- this is deprecated   expo-splash-screen has to be used , will see this in later part
+
+	 npx  expo install expo-app-loading -- --force
+
+
+10. Making responsive ui
+____________________________________________________
+1.using percentage
+2.usig maxWidth minWidht
+3.using Dimensions Api - outside compo for styles
+4.using useWindowDimensions hooks inside react compo 
